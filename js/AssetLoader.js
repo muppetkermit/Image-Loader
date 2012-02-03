@@ -46,7 +46,7 @@ var YM = YM || {};
 		}
 		
 		this.load = function(){
-			image = new Image();
+			image = document.createElement('img');
 			if(queue[queuePointer].src)
 				image.src = queue[queuePointer++].src;
 			else
