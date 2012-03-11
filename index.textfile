@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>BangDaToupe</title>
+		<meta name="author" content="ymutlu" />
+		<!-- Date: 2012-02-02 -->
+		<script src="js/AssetLoader.js"></script>
+	</head>
+	<body id="bodd">
+		
+		<canvas id="canvas"></canvas>
+	</body>
+	<script>
+			//  usage: ["url1","url2"] or [{src:"url1",name:"name1"},{src:"url2",name:"name2"}]
+		var l = YM.Loader.load(["assets/carrot","assets/mole"],"testLoader_",
+								function(img){
+									console.log(img);
+								},
+								function(){
+									console.log("load Complete");
+									body.appendChild(l.getImage(1));
+									body.appendChild(l.getImage("assets/carrot"));
+									console.log("=== " + l.isComplete());
+								}
+								);
+								
+		l.start();
+		console.log(l.isComplete());
+		var body = document.getElementById("bodd");
+		var ll = YM.Loader.getLoader("testLoader_");
+		console.log(ll);
+		
+	</script>
+</html>
